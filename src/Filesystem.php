@@ -47,9 +47,9 @@ class Filesystem
         return RemoteShell::test($path, 'd');
     }
 
-    public function rootPath($relative_path = null): string
+    public function rootPath($relative_path = '/'): string
     {
-        return ($relative_path == null)
+        return ($relative_path == null || $relative_path == '/')
             ? $this->root
             : FileUtil::fullpath(trim($relative_path, '/'), $this->root);
     }

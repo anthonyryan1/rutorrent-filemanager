@@ -47,8 +47,7 @@ class  FileManagerTests {
             $fs->pathExists($this->tempTestDir)
         );
 
-
-
+        assert(str_ends_with($fs->rootPath('/'), '/'), 'Root of topDirectory should end with a trailing slash');
     }
 
     public function testFileChecksum() {
